@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <script Language ="JavaScript" SRC="source.js"></script>
+    
+<style>
+#header {
+    background-color:#0073e6;
+    color:white;
+    padding:15px;
+    height:50px;
+}
+#nav {
+    line-height:30px;
+    background-color:#eeeeee;
+    height:500px;
+    width:200px;
+    float:left;
+    	      
+}
+#section {
+    height:500px;
+    width:1100px;
+    float:left;
+    	 	 
+}
+#footer {
+    background-color:black;
+    color:white;
+    clear:both;
+    text-align:center;
+   padding:5px;	 	 
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #f1f1f1;
+}
+
+li a {
+    display: block;
+    color: #000;
+   padding:5px;	
+    text-decoration: none;
+}
+
+li a.active {
+    background-color: #ffffff;
+    color: black;
+}
+
+li a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+}
+.right {
+    position: absolute;
+    right: 0px;
+    width: 700px;
+    padding:23px;
+   text-align:center;
+}
+.left {
+    position: absolute;
+    width: 700px;
+    }
+    
+#first {
+    float:right;
+    width: 33%;
+    height: 100%;
+    background: #ccccff;
+    
+}
+
+#second {
+    float:left;
+    width: 67%;
+    height: 65%;
+    background: #99bbff;
+    
+}
+
+#third {
+    float:left;
+    width: 67%;
+    height: 35%;
+    background: #c2d6d6;
+    
+}
+
+table {
+    border-collapse: collapse;
+    width: 300px;
+    height:350px;
+}
+
+th, td {
+    height: 1px;
+    padding: 2px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+    
+
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 700px;
+  position: relative;
+  margin: auto;
+   padding: 8px 12px;
+}
+
+
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 13px;
+  width: 13px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+
+input[type=submit] {
+     width: 12%;
+    background-color: #00cccc;
+    color: white;
+    padding: 4px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #009999;
+}
+
+input[type=text], input[type=password],Select, textarea {
+    
+    padding: 0px;
+    border: 3px solid #ccc;
+    border-radius: 2px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: horizontal;
+}
+
+
+
+
+</style>
+<Title> Mgnrega.com </Title>
+</head>
+
+<script Language ="JavaScript">
+function check(form)
+{
+var error="";
+error+=verify_name(form.cnm.value);
+error+=verify_name(form.fnm.value);
+error+=verify_num(form.ph.value);
+error+=verify_email(form.eadd.value);
+error+=verify_num(form.per.value);
+error+=verify_username(form.nm.value);
+
+error+=verify_password(form.pass.value);
+error+=verify_name(form.pnm.value);
+
+if(error!="")
+{
+alert(error);
+return false;
+}
+
+return true;
+} 
+
+</script>
+
+<body>
+<div id="header">
+    <div class="left"><img src="mgnrega.gif" width="600" height="50" alt="c6"/></div>
+        <div class="right"><Form Method ="Post" Action = "Check">
+             &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                User Name &nbsp
+             <Input Type = "text" Value="" Name = "nm" required>
+             &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+             Password &nbsp
+             <Input Type = "password" Value="" Name = "pass" required>
+             <Input Type = "submit" Value="Login" >
+             </Form>
+        </div>
+</div>
+
+<div id="nav">
+<ul>
+  <li><a class="active" href="index.html">Labour Register</a></li>
+  <li><a href="Needer.html">Needer Register</a></li>
+  <li><a href="Forgot.html">Forgot Password</a></li>
+  <li><a href="Admin.html">Administrator</a></li>
+  <li><a href="Contactus.html">Contact Us</a></li>
+</ul>
+    
+</div>
+
+<div id="section">
+    <div id="first">
+        
+        <Form Method ="Post" Action = "Register1" name="myForm" onsubmit="return validateFormCompany()">
+        <fieldset>
+    <legend>Labour Registration Form</legend>
+         <table>
+
+<tr><td> Name </td> <td><Input Type = "text" Value="" Name = "cnm" required></td></tr>
+<tr><td>Location </td> <td>
+<Select Name ="add" > 
+<option value = "Sonipat" Selected> Sonipat &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<option value = "Panipat"> Panipat
+<option value = "Samalkha"> Samalkha
+<option value = "Gaunaur"> Gaunaur
+<option value = "Rai"> Rai
+</Select></td></tr>
+<tr><td> Labour Phone </td> <td><Input Type = "text" Value="" Name = "ph" required></td></tr>
+
+<tr><td> Skills</td> <td>
+<Select Name ="skill" > 
+<option value = "Carpenter" Selected> Carpenter &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<option value = "Plumber"> Plumber
+<option value = "Electrician"> Electrician
+<option value = "Driver"> Driver
+<option value = "Painter"> Painter
+</Select></td></tr>
+
+<tr><td> Pay </td> <td><Input Type = "text" Value="" Name = "pay" required></td></tr>
+
+<tr><td> Per</td> <td>
+<Select Name ="per" > 
+<option value = "Hour" Selected> Hour &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<option value = "Day"> Day
+<option value = "Week"> Week
+<option value = "Month"> Month
+<option value = "Year"> Year
+</Select></td></tr>
+
+<tr><td> User Name </td> <td><Input Type = "text" Value="" Name = "nm" required></td></tr>
+
+<tr><td> Password </td> <td><Input Type = "password" Value="" Name = "pass" required></td></tr>
+
+<tr><td>  Fav. Player  </td> <td><Input Type = "text" Value="" Name = "fav" required></td></tr>
+<tr><td>
+        
+        <Input Type = "submit" Value="Register" style="width: 100%;"></td></tr></table>
+</fieldset>
+</Form>
+
+    </div>
+    
+    <div id="second">
+       
+
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 3</div>
+  <img src="m1.png" style="width:100%">
+ 
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 3</div>
+  <img src="m2.png" style="width:100%">
+  
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 3</div>
+  <img src="m3.png" style="width:100%">
+  
+ 
+</div>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+</div>
+
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+       slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex> slides.length) {slideIndex = 1}    
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+    setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+</script> 
+    </div>
+    
+    <div id="third">
+        <br/>
+        <b style="margin-top: 10px;"> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Other Government Yojanas</b>
+<marquee behavior="scroll" direction="left" onmouseover="this.stop()" onmouseout="this.start()" style="margin-top: 20px;">
+<img src="c0.jpg" width="100" height="100" alt="Natural"/>
+<a href="site_94.xhtml"><img src="l1.jpg" width="100" height="100" alt="c1"/></a>
+<a href="site_39.xhtml"><img src="l2.jpg" width="100" height="100" alt="c2"/></a>
+<a href="site_63.xhtml"><img src="l3.jpg" width="100" height="100" alt="c3"/></a>
+<a href="site_11.xhtml"><img src="l4.jpg" width="100" height="100" alt="c4"/></a>
+<a href="site_11.xhtml"><img src="l5.png" width="100" height="100" alt="c5"/></a>
+<a href="site_11.xhtml"><img src="l6.png" width="100" height="100" alt="c6"/></a>
+<a href="site_11.xhtml"><img src="l7.jpg" width="100" height="100" alt="c7"/></a>
+<a href="site_11.xhtml"><img src="l8.jpg" width="100" height="100" alt="c8"/></a>
+<a href="site_11.xhtml"><img src="l9.png" width="100" height="100" alt="c9"/></a>
+<a href="site_11.xhtml"><img src="l10.jpg" width="100" height="100" alt="c10"/></a>
+</marquee>
+    </div>
+</div>
+
+<div id="footer">
+    Copyright©Mahatama Gandhi National Rural Employment Guarantee Act
+</div>
+
+    <!-- Validations -->
+    <script src="js/registervalidation.js"></script>
+    
+</body>
+
+
+</html>
